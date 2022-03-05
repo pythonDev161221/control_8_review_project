@@ -1,0 +1,45 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "asdf",
+    "category": "CLOTHES",
+    "description": "adsf",
+    "image": "pictures/244.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "asdf",
+    "category": "CLOTHES",
+    "description": "asdf",
+    "image": "static/images/images.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "asdf",
+    "category": "CLOTHES",
+    "description": "asdfe",
+    "image": "static/images/images.png"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "dzrgesr",
+    "evaluation": 4,
+    "is_moderated": false,
+    "created_at": "2022-03-05T06:37:23.524Z",
+    "updated_at": "2022-03-05T06:43:36.379Z"
+  }
+}
+]
