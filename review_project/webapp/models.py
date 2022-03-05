@@ -3,6 +3,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse
+
 PRODUCT_CATEGORY = (("CLOTHES", "Одежда"), ("TECH", "Техника"), ("SERVICE", "Услуги"))
 
 User = get_user_model()
@@ -14,6 +16,9 @@ class Product(models.Model):
     description = models.CharField(max_length=2000, null=True, blank=True)
     image = models.ImageField(upload_to="pictures/", default="static/images/images.png",
                               null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('webapp:product_list_view')
 
 
 class Review(models.Model):
