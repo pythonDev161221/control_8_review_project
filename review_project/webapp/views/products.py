@@ -18,6 +18,8 @@ class ProductDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         reviews = self.object.reviews.filter(is_moderated__exact=True)
+        if self.request.user.has_perm("webapp.can_moderate"):
+            reviews = self.object.reviews.all()
         kwargs['reviews'] = reviews
         return super().get_context_data(**kwargs)
 
