@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from webapp.forms import ReviewForm
 from webapp.models import Review, Product
@@ -32,3 +32,9 @@ class ReviewUpdateView(UpdateView):
         return reverse('webapp:product_detail_view', kwargs={'pk': self.object.product.pk})
 
 
+class ReviewDeleteView(DeleteView):
+    model = Review
+    template_name = "reviews/review_delete_view.html"
+
+    def get_success_url(self):
+        return reverse('webapp:product_detail_view', kwargs={'pk': self.object.product.pk})

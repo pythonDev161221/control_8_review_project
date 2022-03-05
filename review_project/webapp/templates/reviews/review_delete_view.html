@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Are you sure to want to delete {{ review }}</h2>
+    <form action="{% url 'webapp:review_delete_view' review.pk %}" method="post">
+    {% include 'partial/form.html' with button_text='Yes' %}
+
+    </form>
+    <a href="{% url 'webapp:product_detail_view' review.product.pk %}">No</a>
+{% endblock content %}
