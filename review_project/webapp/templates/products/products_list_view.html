@@ -3,8 +3,8 @@
 {% block content %}
     <h2>Products</h2>
     {% for product in products %}
-        <p> {{ product.name }}</p>
-   
+        <p><a href="{% url 'webapp:product_detail_view' product.pk %}">{{ product.name }}</a></p>
+
     {% endfor %}
 
 {% endblock %}
