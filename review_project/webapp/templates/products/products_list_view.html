@@ -1,0 +1,10 @@
+{% include 'base.html' %}
+
+{% block content %}
+    <h2>Products</h2>
+    {% for product in products %}
+        <p> {{ product.name }}</p>
+   
+    {% endfor %}
+
+{% endblock %}
