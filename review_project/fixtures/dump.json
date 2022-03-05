@@ -1,45 +1,149 @@
 [
 {
   "model": "webapp.product",
-  "pk": 1,
+  "pk": 6,
   "fields": {
-    "name": "asdf",
+    "name": "dfgs",
     "category": "CLOTHES",
-    "description": "adsf",
-    "image": "pictures/244.jpg"
-  }
-},
-{
-  "model": "webapp.product",
-  "pk": 2,
-  "fields": {
-    "name": "asdf",
-    "category": "CLOTHES",
-    "description": "asdf",
+    "description": "sdgrs",
     "image": "static/images/images.png"
   }
 },
 {
   "model": "webapp.product",
-  "pk": 3,
+  "pk": 7,
   "fields": {
-    "name": "asdf",
+    "name": "sdfgsfd",
+    "category": "TECH",
+    "description": "sdfgsdf",
+    "image": "static/images/images.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "sfewf",
     "category": "CLOTHES",
-    "description": "asdfe",
+    "description": "afse",
     "image": "static/images/images.png"
   }
 },
 {
   "model": "webapp.review",
-  "pk": 1,
+  "pk": 6,
   "fields": {
     "author": 1,
-    "product": 1,
-    "text": "dzrgesr",
+    "product": 8,
+    "text": "asdfe",
+    "evaluation": 5,
+    "is_moderated": false,
+    "created_at": "2022-03-05T09:49:51.745Z",
+    "updated_at": "2022-03-05T09:49:54.894Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 8,
+  "fields": {
+    "author": 2,
+    "product": 6,
+    "text": "sdfg",
+    "evaluation": 5,
+    "is_moderated": false,
+    "created_at": "2022-03-05T10:33:17.008Z",
+    "updated_at": "2022-03-05T10:33:17.012Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 9,
+  "fields": {
+    "author": 3,
+    "product": 6,
+    "text": "asdfe",
     "evaluation": 4,
     "is_moderated": false,
-    "created_at": "2022-03-05T06:37:23.524Z",
-    "updated_at": "2022-03-05T06:43:36.379Z"
+    "created_at": "2022-03-05T10:34:08.335Z",
+    "updated_at": "2022-03-05T10:34:08.339Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 10,
+  "fields": {
+    "author": 3,
+    "product": 6,
+    "text": "ssdgfasef",
+    "evaluation": 4,
+    "is_moderated": false,
+    "created_at": "2022-03-05T10:57:03.023Z",
+    "updated_at": "2022-03-05T10:57:03.027Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 11,
+  "fields": {
+    "author": 3,
+    "product": 6,
+    "text": "aefaefa",
+    "evaluation": 5,
+    "is_moderated": false,
+    "created_at": "2022-03-05T10:57:07.161Z",
+    "updated_at": "2022-03-05T10:57:07.165Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 12,
+  "fields": {
+    "author": 3,
+    "product": 6,
+    "text": "sfasef",
+    "evaluation": 3,
+    "is_moderated": false,
+    "created_at": "2022-03-05T10:57:26.469Z",
+    "updated_at": "2022-03-05T10:57:26.474Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 13,
+  "fields": {
+    "author": 2,
+    "product": 6,
+    "text": "dsgsr",
+    "evaluation": 4,
+    "is_moderated": false,
+    "created_at": "2022-03-05T11:03:42.391Z",
+    "updated_at": "2022-03-05T11:09:56.461Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 14,
+  "fields": {
+    "author": 2,
+    "product": 6,
+    "text": "srgser",
+    "evaluation": 3,
+    "is_moderated": true,
+    "created_at": "2022-03-05T11:04:40.837Z",
+    "updated_at": "2022-03-05T11:35:47.879Z"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 15,
+  "fields": {
+    "author": 5,
+    "product": 6,
+    "text": "afw",
+    "evaluation": 5,
+    "is_moderated": false,
+    "created_at": "2022-03-05T12:44:49.654Z",
+    "updated_at": "2022-03-05T12:44:49.659Z"
   }
 }
 ]
