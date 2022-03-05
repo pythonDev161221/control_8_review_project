@@ -3,7 +3,9 @@
 {% block content %}
     <h2>Products</h2>
     {% for product in products %}
-        <p><a href="{% url 'webapp:product_detail_view' product.pk %}">{{ product.name }}</a></p>
+        <p><a href="{% url 'webapp:product_detail_view' product.pk %}">{{ product.name }}</a>
+         *** <a href="{% url 'webapp:product_update_view' product.pk %}">Update</a>
+         | <a href="{% url 'webapp:product_delete_view' product.pk %}">Delete</a></p>
 
     {% endfor %}
 
