@@ -17,7 +17,7 @@
     <h4>Reviews:</h4>
     {% for review in product.reviews.all %}
         <div>
-           {{ review.author.name }}, {{ review.author.email }}, {{ review.text }}, {{ review.evaluation }}
+           {{ review.author.username }}, {{ review.author.email }}, {{ review.text }}, {{ review.evaluation }}
          *** <a href="{% url 'webapp:review_update_view' review.pk %}">Update</a>
             | <a href="{% url 'webapp:review_delete_view' review.pk %}">Delete</a>
         </div>
