@@ -1,10 +1,24 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
+
+          {% block nav %}
+ <li class="nav-item">
+  <a class="nav-link" href="{% url 'webapp:review_create_view' product.pk %}">CreateReview</a>
+</li>
+          {% endblock %}
+
+
 
 {% block content %}
 
     <img src="{{ product.image }}" alt="product picture">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.category }}</p>
-    <p>{{ product.description }}</p>
+    <h3>Product name: {{ product.name }}</h3>
+    <p>category: {{ product.category }}</p>
+    <p>description: {{ product.description }}</p>
+    <h4>Reviews:</h4>
+    {% for review in product.reviews.all %}
+        <div>
+           {{ review }}
+        </div>
+    {% endfor %}
 
 {% endblock content %}
