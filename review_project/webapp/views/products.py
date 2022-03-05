@@ -15,6 +15,11 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = "products/product_detail_view.html"
 
+    def get_context_data(self, **kwargs):
+        reviews = self.object.reviews.all()
+        kwargs['reviews'] = reviews
+        return super().get_context_data(**kwargs)
+
 
 class ProductCreateView(CreateView):
     model = Product
@@ -32,3 +37,5 @@ class ProductDeleteView(DeleteView):
     model = Product
     template_name = "products/product_delete_view.html"
     success_url = reverse_lazy('webapp:product_list_view')
+
+

@@ -6,8 +6,6 @@
 </li>
           {% endblock %}
 
-
-
 {% block content %}
 
     <img src="{{ product.image }}" alt="product picture">
@@ -15,12 +13,6 @@
     <p>category: {{ product.category }}</p>
     <p>description: {{ product.description }}</p>
     <h4>Reviews:</h4>
-    {% for review in product.reviews.all %}
-        <div>
-           {{ review.author.username }}, {{ review.author.email }}, {{ review.text }}, {{ review.evaluation }}
-         *** <a href="{% url 'webapp:review_update_view' review.pk %}">Update</a>
-            | <a href="{% url 'webapp:review_delete_view' review.pk %}">Delete</a>
-        </div>
-    {% endfor %}
+{% include 'partial/reviews_form.html' %}
 
 {% endblock content %}
