@@ -12,4 +12,4 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        exclude = ['author', 'product', 'is_moderated']
+        exclude = ['author', 'product']

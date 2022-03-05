@@ -31,7 +31,7 @@ class UserProfileView(DetailView):
     context_object_name = "user_object"
 
     def get_context_data(self, **kwargs):
-        reviews = self.object.reviews.all()
+        reviews = self.object.reviews.filter(is_moderated__exact=True)
         kwargs['reviews'] = reviews
         return super().get_context_data(**kwargs)
 
@@ -59,7 +59,6 @@ class UserPasswordChangeView(PermissionRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        update_session_auth_hash(self.request, self.object)
         return response
 
     def get_object(self, queryset=None):

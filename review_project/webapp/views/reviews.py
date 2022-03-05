@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -17,6 +17,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         review = form.save(commit=False)
         review.author = self.request.user
         review.product = get_object_or_404(Product, pk=self.kwargs.get('pk'))
+        review.is_moderated = False
         review.save()
         return super().form_valid(form)
 
@@ -24,18 +25,20 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:product_detail_view', kwargs={'pk': self.kwargs.get('pk')})
 
 
-class ReviewUpdateView(UpdateView):
+class ReviewUpdateView(PermissionRequiredMixin, UpdateView):
     model = Review
     form_class = ReviewForm
     template_name = "reviews/review_update_view.html"
+    permission_required = "webapp.change_review"
 
     def get_success_url(self):
         return reverse('webapp:product_detail_view', kwargs={'pk': self.object.product.pk})
 
 
-class ReviewDeleteView(DeleteView):
+class ReviewDeleteView(PermissionRequiredMixin, DeleteView):
     model = Review
     template_name = "reviews/review_delete_view.html"
+    permission_required = "webapp.delete_review"
 
     def get_success_url(self):
         return reverse('webapp:product_detail_view', kwargs={'pk': self.object.product.pk})

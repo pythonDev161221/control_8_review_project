@@ -35,4 +35,6 @@ class Review(models.Model):
 
     def get_absolut_url(self):
         return reverse('webapp:product_detail_view', kwargs={'pk': self.product.pk})
-    
+
+    class Meta:
+        permissions = [('can_moderate', 'может модерировать'), ]
